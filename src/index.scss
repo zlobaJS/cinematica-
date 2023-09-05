@@ -1,0 +1,84 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --black: rgb(18, 11, 45);
+    --black2: rgb(18, 11, 45);
+    --black3: rgb(18, 11, 45);
+    --black-lighter: #1c4b91;
+    --black-light: #173d77;
+    --pink: #da2f68;
+    --orange: #f89e00;
+    --gradient: linear-gradient(98.37deg, #5116ff 0.99%, #ff5f97 100%);
+    --white: #ffffff
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 8px;
+}
+
+/* Стилизация трека полосы прокрутки (фон) */
+::-webkit-scrollbar-track {
+    background: #3d3d3d;
+}
+
+/* Стилизация ползунка полосы прокрутки */
+::-webkit-scrollbar-thumb {
+    background: #4c3eff;
+    border-radius: 5px; /* Закругление углов ползунка */
+}
+
+/* Стилизация ползунка при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: #4c3eff;
+}
+
+
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: #0a2955;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+            90deg,
+            rgba(#193763, 0) 0,
+            rgba(#193763, 0.2) 20%,
+            rgba(#193763, 0.5) 60%,
+            rgba(#193763, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: "";
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
